@@ -1,0 +1,19 @@
+## .NET build artefacts
+bin/
+obj/
+
+## Test outputs
+TestResults/
+playwright-traces/
+playwright-report/
+
+## Secrets and local overrides
+appsettings.local.json
+*.local.json
+
+## OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.user

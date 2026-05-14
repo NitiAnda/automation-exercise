@@ -1,0 +1,2 @@
+Sample file for automated upload testing.
+This file is used by the Contact Us file upload test scenario.
