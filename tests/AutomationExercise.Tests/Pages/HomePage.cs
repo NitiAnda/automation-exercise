@@ -56,18 +56,18 @@ public class HomePage(IPage page)
 
     public async Task ClickWomenCategoryAndDressAsync()
     {
-        await WomenCategoryToggle.ScrollIntoViewIfNeededAsync();
-        await WomenCategoryToggle.ClickAsync();
+        await WomenCategoryToggle.EvaluateAsync("el => el.click()");
         await Assertions.Expect(WomenDressLink).ToBeVisibleAsync(new() { Timeout = 10_000 });
-        await WomenDressLink.ClickAsync(new() { Force = true });
+        await WomenDressLink.EvaluateAsync("el => el.click()");
+        await page.WaitForURLAsync("**/category_products/1", new() { Timeout = 15_000 });
     }
 
     public async Task ClickMenCategoryAndTshirtsAsync()
     {
-        await MenCategoryToggle.ScrollIntoViewIfNeededAsync();
-        await MenCategoryToggle.ClickAsync();
+        await MenCategoryToggle.EvaluateAsync("el => el.click()");
         await Assertions.Expect(MenTshirtsLink).ToBeVisibleAsync(new() { Timeout = 10_000 });
-        await MenTshirtsLink.ClickAsync(new() { Force = true });
+        await MenTshirtsLink.EvaluateAsync("el => el.click()");
+        await page.WaitForURLAsync("**/category_products/3", new() { Timeout = 15_000 });
     }
 
     public async Task VerifyCategoryHeadingContainsAsync(string text)
