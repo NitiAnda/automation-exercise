@@ -35,7 +35,7 @@ public class BaseTest : PageTest
         try
         {
             await Page.GetByRole(AriaRole.Button, new() { Name = "Consent" })
-                .ClickAsync(new() { Timeout = 5_000 });
+                .ClickAsync(new() { Timeout = 8_000 });
         }
         catch (Exception ex) when (ex is TimeoutException or PlaywrightException)
         {
